@@ -1,4 +1,3 @@
-
 const isDebugMode = () => {
   const nodeEnv = process.env.NODE_ENV;
   const debugMode = nodeEnv 
@@ -9,9 +8,7 @@ const isDebugMode = () => {
       console.log(`Current NODE_ENV: ${nodeEnv}`);
     return false;
   }
-
 };
-isDebugMode()
 
 function encodeToBase64(...args) {
   const data = args.join(':'); 
@@ -24,7 +21,6 @@ function encodeToBase64(...args) {
     return null;
   }
 }
-encodeToBase64('mather', 'father')
 
 function encodeToHex(...args) {
   const data = args.join(':');
@@ -37,10 +33,8 @@ function encodeToHex(...args) {
     return null;
   }
 }
-encodeToHex('mather', 'father')
 
 function decodeFromBase64(base64String) {
-
   try {
     const decodedData = Buffer.from(base64String, 'base64').toString('utf-8');
     console.log('Data to be decoded from Base64:', decodedData);
@@ -50,10 +44,6 @@ function decodeFromBase64(base64String) {
     return null;
   }
 }
-const  base64String = 'bWF0aGVyOmZhdGhlcg=='
-decodeFromBase64(base64String)
-
-
 
 function decodeFromHex(hexString) {
   try {
@@ -65,9 +55,6 @@ function decodeFromHex(hexString) {
     return null;
   }
 }
-const hexString = '6d61746865723a666174686572'
-decodeFromHex(hexString)
-
 
 function safeDecodeFromBase64(base64String) {
   try {
@@ -83,8 +70,6 @@ function safeDecodeFromBase64(base64String) {
     throw error;
   }
 }
-safeDecodeFromBase64(base64String)
-
 
 function safeDecodeFromHex(hexString) {
   try {
@@ -100,8 +85,6 @@ function safeDecodeFromHex(hexString) {
     throw error;
   }
 }
-safeDecodeFromHex(hexString)
-
 
 export {
   isDebugMode,
